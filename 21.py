@@ -68,3 +68,40 @@ class CarroEletrico(VeiculoEletrico):
     def recarregar(self, minutos: float) -> None:
         ganho = minutos * 10.0
         self._alterar_carga(ganho)
+
+class SistemaMobilidade:
+    def __init__(self):
+        self.frota = []
+
+    def realizar_deslocamento(self, distancia):
+        pass
+
+    def adicionar_veiculo(self, veiculo):
+        self.frota.append(veiculo)
+        print(f"Veículo adicionado: {type(veiculo).__name__}")
+
+    def listar_cargas(self):
+        print("=== ESTADO ATUAL DA FROTA ===")
+        for veiculo in self.frota:
+            nome_tipo = type(veiculo).__name__
+            print(f"[{nome_tipo}]", end="")
+            veiculo.mostrar_carga()
+
+    def recarregar_todos(self, minutos):
+        print(f"A CARREGAR A FROTA POR {minutos} MINUTOS")
+
+        for veiculo in self.frota:
+            veiculo.recarregar(minutos)
+            print(f" -> {type(veiculo).__name__}: ", end="")
+            veiculo.mostrar_carga()
+
+
+# ==========================================
+# 4. EXEMPLO DE INTERAÇÃO (Alínea D)
+# ==========================================
+if __name__ == "__main__":
+    print(">>> INICIAR SISTEMA DE GESTÃO DE FROTA <<<")
+
+
+
+    print("\n>>> FIM DA SIMULAÇÃO <<<")
