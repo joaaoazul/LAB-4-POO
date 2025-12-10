@@ -96,12 +96,25 @@ class SistemaMobilidade:
             veiculo.mostrar_carga()
 
 
-# ==========================================
-# 4. EXEMPLO DE INTERAÇÃO (Alínea D)
-# ==========================================
 if __name__ == "__main__":
-    print(">>> INICIAR SISTEMA DE GESTÃO DE FROTA <<<")
+    print(">>> SISTEMA DE GESTÃO DE FROTA <<<")
 
+    sistema = SistemaMobilidade()
 
+    v1 = TrotineteEletrica(50)
+    v2 = BicicletaEletrica(95)
+    v3 = CarroEletrico(10)
 
-    print("\n>>> FIM DA SIMULAÇÃO <<<")
+    sistema.adicionar_veiculo(v1)
+    sistema.adicionar_veiculo(v2)
+    sistema.adicionar_veiculo(v3)
+
+    sistema.listar_cargas()
+
+    sistema.realizar_deslocamento(15.0)
+
+    sistema.recarregar_todos(10.0)
+
+    print("\n>>> FIM <<<")
+
+print("a91152 - João Azul")
